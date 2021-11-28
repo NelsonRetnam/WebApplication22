@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp22-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: webapp22-app-pod
+  template:
+    metadata:
+      labels:
+        app: webapp22-app-pod
+    spec:
+      containers:
+      - name: webapp22-app-container
+        image: webapplication22
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
