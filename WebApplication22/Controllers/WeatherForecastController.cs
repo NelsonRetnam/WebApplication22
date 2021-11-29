@@ -23,6 +23,7 @@ namespace WebApplication22.Controllers
             _logger = logger;
         }
 
+        //Get method
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
